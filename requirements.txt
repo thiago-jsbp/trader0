@@ -1,0 +1,6 @@
+ccxt>=1.18.224
+numpy>=1.13.3
+pandas>=0.24.2
+requests>=2.18.4
+ta>=0.4.5
+urllib3>=1.22
