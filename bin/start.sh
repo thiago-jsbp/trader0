@@ -6,7 +6,7 @@ export PYTHONWARNINGS='ignore'
 
 cd ..
 rm -f .halt
-#rm -fR data logs
+rm -fR data logs
 mkdir -p data logs
 
 timestamp=$(date -u +'%Y.%m.%d.%Z.%H.%M.%S')
