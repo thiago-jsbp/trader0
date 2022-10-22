@@ -147,7 +147,7 @@ def book(exchange_obj, symbol, margin=0):
 
     try:
         wait()
-        req = exchange_obj.fetch_order_book(symbol, limit=500)
+        req = exchange_obj.fetch_order_book(symbol, limit=300)
         asks = [(p, a) for p, a in sorted(req['asks'])]
         bids = [(p, -a) for p, a in sorted(req['bids'], reverse=True)]
 
@@ -328,7 +328,10 @@ def _cached(exchange_obj, order_data=None, before_millis=None):
     try:
         if before_millis is None:
             before_millis = exchange_obj.milliseconds() - 7 * 24 * secs_in_hour * 1000
-        exchange_obj.purge_cached_orders(before_millis)
+
+        # DEPRECATED: purge_cached_orders()
+        # https://github.com/ccxt/ccxt/issues/7681
+        # exchange_obj.purge_cached_orders(before_millis)
 
         template = {'data': {}, 'last': 0., }
         tmp = disk(db_file)

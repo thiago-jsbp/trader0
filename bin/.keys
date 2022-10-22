@@ -1,16 +1,7 @@
 [BINANCE]
-key =
-secret =
-
-[BITSTAMP]
-key =
-secret =
-uid =
-
-[BITTREX]
-key =
+apiKey =
 secret =
 
 [POLONIEX]
-key =
+apiKey =
 secret =
